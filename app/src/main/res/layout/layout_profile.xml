@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorD">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:clipToPadding="true">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp">
+
+            <!-- user image and name -->
+            <RelativeLayout
+                android:id="@+id/relativeLayoutA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txtEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_edit"
+                    android:background="@drawable/style_tab_bar"
+                    android:text="Edit"
+                    android:gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingEnd="10dp"
+                    android:drawablePadding="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"/>
+
+                <ImageView
+                    android:id="@+id/imgQrCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_qr"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgUserImage"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/img_user" />
+
+                <TextView
+                    android:id="@+id/txtChoose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgUserImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:text="Choose image"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/inputName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtChoose"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:hint="User name"
+                    android:padding="3dp"
+                    android:textColor="@color/black"
+                    tools:text="Atik faysal" />
+
+                <EditText
+                    android:id="@+id/inputEmpId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/inputName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:hint="Employee id not set"
+                    android:padding="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fifteen"
+                    tools:text="10020035" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardViewA"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            android:background="@color/colorD"
+            app:cardCornerRadius="10dp">
+
+
+            <!-- user addition information layout -->
+            <LinearLayout
+                android:id="@+id/linearLayoutA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_below="@+id/cardViewA"
+                android:background="@color/colorD">
+
+                <!-- user address layout -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/colorB"
+                        android:textSize="@dimen/sixteen"
+                        android:padding="5dp"/>
+
+                    <EditText
+                        android:id="@+id/inputAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:hint="Address not set yet"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fifteen"
+                        tools:text="Toma 5c 29/1,Shukrabad,Dhanmondi 32,Dhaka"
+                        android:padding="5dp"/>
+
+                </LinearLayout>
+
+                <!-- phone and email layout-->
+                <LinearLayout
+                    android:id="@+id/linearLayoutC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <!-- user email address layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutD"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/inputEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="User Email"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="atikfaysal@gmail.com"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- user phone number layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutE"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/inputPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="User phone number"
+                            android:textColor="@color/black"
+                            android:inputType="phone"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="+8801835897172"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- dob and gender layout-->
+                <LinearLayout
+                    android:id="@+id/linearLayoutF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <!-- user dob layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutG"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date of birth"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtDob"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="dob not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="1995-10-01"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- user gender layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutH"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gender"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Gender not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="Male"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- blood group and user type layout-->
+                <LinearLayout
+                    android:id="@+id/linearLayoutR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <!-- user dob layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutS"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User type"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtUserType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="User type"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="Admin"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- user gender layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutT"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blood group"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtBloodGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Blood group not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="A+"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- office info layout-->
+                <LinearLayout
+                    android:id="@+id/linearLayoutI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <!-- user dob layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutJ"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Company"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtCompany"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="Company name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="Bdtechnosoft"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- user gender layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutK"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Office time"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtOfficeTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Office time"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="09Pm - 05PM"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- department layout-->
+                <LinearLayout
+                    android:id="@+id/linearLayoutL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <!-- user dob layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutM"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Department"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtDepartment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="Department not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="Bdtechnosoft"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- user gender layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutN"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Week end"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtWeekEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="Weekend not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="Friday"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- salary and designation layout-->
+                <LinearLayout
+                    android:id="@+id/linearLayoutO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <!-- user dob layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutP"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Designation"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtDesignation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="Designation not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="Android developer"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- user gender layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutQ"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Salary"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/txtSalary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Salary not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="25000"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/bSave"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/style_button"
+            android:layout_marginTop="40dp"
+            android:text="Save changes"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:elevation="@dimen/ten"
+            android:clipToPadding="false"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:layout_below="@+id/cardViewB"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+    </RelativeLayout>
+
+</ScrollView>

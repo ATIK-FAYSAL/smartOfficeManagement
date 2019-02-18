@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clipToPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:clipToPadding="true">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <Button
+            android:id="@+id/bCreateCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create new company"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:textStyle="normal"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:background="@drawable/style_tab_bar"
+            android:elevation="@dimen/ten"
+            android:padding="5dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/toolbar"/>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+
+                <!-- user image and name -->
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_edit"
+                        android:background="@drawable/style_tab_bar"
+                        android:text="Edit"
+                        android:gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="5dp"
+                        android:paddingEnd="10dp"
+                        android:drawablePadding="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"/>
+
+                    <ImageView
+                        android:id="@+id/imgQrCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_qr"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"/>
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgUserImage"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/img_user" />
+
+                    <TextView
+                        android:id="@+id/txtChoose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imgUserImage"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="Choose image"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/inputName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtChoose"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:gravity="center_horizontal"
+                        android:hint="Company name"
+                        android:padding="3dp"
+                        android:textColor="@color/black"
+                        tools:text="Bdtechnosoft" />
+
+                    <TextView
+                        android:id="@+id/txtAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/inputName"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/white"
+                        android:gravity="center_horizontal"
+                        android:hint="Admin name"
+                        android:padding="3dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fifteen"
+                        tools:text="Crated by atik" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardViewA"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp">
+
+
+                <!-- user addition information layout -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/cardViewA">
+
+                    <!-- user address layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/ten"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/inputAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="Address not set yet"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="Toma 5c 29/1,Shukrabad,Dhanmondi 32,Dhaka"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray"
+                        android:layout_marginTop="5dp"/>
+
+                    <!-- phone and email layout-->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/ten"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/inputEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="User Email"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="atikfaysal@gmail.com"
+                            android:padding="5dp"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray"
+                        android:layout_marginTop="5dp"/>
+
+
+                    <!-- user phone number layout -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutE"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/sixteen"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/inputPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="User phone number"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="+8801835897172"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray"
+                        android:layout_marginTop="5dp"/>
+
+                    <!-- dob and gender layout-->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Website"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/ten"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/inputWebsite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="Company website"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="bdtechnosoft.com"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray"
+                        android:layout_marginTop="5dp"/>
+
+                    <!-- dob and gender layout-->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Description"
+                            android:textColor="@color/colorB"
+                            android:textSize="@dimen/ten"
+                            android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/inputDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:hint="Company website"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fifteen"
+                            tools:text="bdtechnosoft.com"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/bSave"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/style_button"
+                android:layout_marginTop="40dp"
+                android:text="Save changes"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:elevation="@dimen/ten"
+                android:clipToPadding="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:layout_below="@+id/cardViewB"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

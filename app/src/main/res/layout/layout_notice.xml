@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorD">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutA"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@drawable/style_tab_bar"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/toolbar">
+
+        <Button
+            android:id="@+id/bNotice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Notice"
+            android:textColor="@color/black"
+            android:textSize="@dimen/fifteen"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorA"/>
+
+        <Button
+            android:id="@+id/bCreateNotice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Create Notice"
+            android:textColor="@color/black"
+            android:textSize="@dimen/fifteen"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/linearLayoutA"
+        android:layout_marginTop="50dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:clipToPadding="true">
+
+            <EditText
+                android:id="@+id/inputTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_tab_bar"
+                android:hint="Enter your title"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="10dp"/>
+
+
+            <EditText
+                android:id="@+id/inputNotice"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_tab_bar"
+                android:gravity="start"
+                android:hint="Write notice"
+                android:inputType="textMultiLine"
+                android:lines="15"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textSize="13dp" />
+
+
+            <TextView
+                android:text="Priority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="@color/colorC"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioHigh"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="High"
+                    android:gravity="center"
+                    android:textSize="@dimen/sixteen"
+                    android:textColor="@color/colorB"
+                    android:padding="5dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioMedium"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Medium"
+                    android:gravity="center"
+                    android:textSize="@dimen/sixteen"
+                    android:textColor="@color/colorB"
+                    android:padding="5dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioLow"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Low"
+                    android:gravity="center"
+                    android:textSize="@dimen/sixteen"
+                    android:textColor="@color/colorB"
+                    android:padding="5dp"/>
+
+
+            </RadioGroup>
+
+
+            <Button
+                android:id="@+id/bPublish"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/style_button"
+                android:layout_marginTop="40dp"
+                android:text="Publish"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:elevation="5dp"
+                android:layout_marginBottom="10dp"
+                android:clipToPadding="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+   <RelativeLayout
+       android:id="@+id/relativeLayoutB"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_below="@+id/relativeLayoutA"
+       android:background="@color/colorD"
+       android:layout_marginTop="10dp">
+
+       <include
+           android:id="@+id/emptyView"
+           layout="@layout/empty"/>
+
+       <android.support.v7.widget.RecyclerView
+           android:id="@+id/list"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginTop="5dp">
+       </android.support.v7.widget.RecyclerView>
+
+   </RelativeLayout>
+
+</RelativeLayout>

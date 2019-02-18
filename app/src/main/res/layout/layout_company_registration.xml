@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <LinearLayout
+            android:id="@+id/relativeLayoutA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/inputComName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_tab_bar"
+                android:padding="10dp"
+                android:hint="Company name"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/inputComEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_tab_bar"
+                android:padding="10dp"
+                android:hint="Company email"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/inputComPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_tab_bar"
+                android:padding="10dp"
+                android:hint="Company phone number"
+                android:inputType="phone"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/inputComAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_tab_bar"
+                android:padding="10dp"
+                android:hint="Company Address"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"/>
+
+
+
+            <EditText
+                android:id="@+id/inputComWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_tab_bar"
+                android:padding="10dp"
+                android:hint="Company website"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"/>
+
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/style_tab_bar"
+                android:padding="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"/>
+
+
+            <EditText
+                android:id="@+id/inputDescription"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_tab_bar"
+                android:gravity="start"
+                android:hint="Company description"
+                android:inputType="textMultiLine"
+                android:lines="15"
+                android:padding="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/bPublish"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/style_tab_bar"
+                android:layout_marginTop="20dp"
+                android:text="Set map location"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:clipToPadding="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorB"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+
+            <Button
+                android:id="@+id/bCreate"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/style_button"
+                android:layout_marginTop="40dp"
+                android:text="Create company"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:elevation="5dp"
+                android:layout_marginBottom="10dp"
+                android:clipToPadding="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

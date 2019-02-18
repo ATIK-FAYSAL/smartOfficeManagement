@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemProfile"
+        android:title="Profile"
+        android:icon="@drawable/icon_user"/>
+
+    <item
+        android:id="@+id/itemMessage"
+        android:title="Message"
+        android:icon="@drawable/icon_message"/>
+
+    <item
+        android:id="@+id/itemNotice"
+        android:title="Notice"
+        android:icon="@drawable/icon_notification"/>
+
+    <item
+        android:id="@+id/itemEmployee"
+        android:title="Employee"
+        android:icon="@drawable/icon_employee"/>
+
+    <item
+        android:id="@+id/itemCompany"
+        android:title="Company"
+        android:icon="@drawable/icon_company"/>
+
+    <item
+        android:id="@+id/itemDepartment"
+        android:title="Department"
+        android:icon="@drawable/icon_phone"/>
+
+    <item
+        android:id="@+id/itemProject"
+        android:title="Project"
+        android:icon="@drawable/icon_phone"/>
+
+    <item
+        android:id="@+id/itemWork"
+        android:title="Work/Task"
+        android:icon="@drawable/icon_work"/>
+
+    <item
+        android:id="@+id/itemSetting"
+        android:title="Setting"
+        android:icon="@drawable/icon_setting"/>
+
+    <item
+        android:id="@+id/itemSignOut"
+        android:title="Sign out"
+        android:icon="@drawable/icon_sign_out"/>
+
+
+</menu>

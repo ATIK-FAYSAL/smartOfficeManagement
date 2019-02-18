@@ -1,3 +1,51 @@
 <resources>
     <string name="app_name">SmartOfficeManagement</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <integer name="progTime">1500</integer>
+    <string name="offline">Unable to connect internet.Please check your internet connection and try again.</string>
+    <string name="authenticationFailed">Authentication failed. Email or Password does not match.Please try again.</string>
+    <string name="invalidInfo">"User information's are not valid.Please insert valid information</string>
+    <string name="registrationFailed">Registration failed.Please try again.</string>
+    <string name="alreadyExist">Email or phone number already exist. Please try again with another phone or email</string>
+    <string name="unknown">Something went wrong.Please try again</string>
+    <string name="invalid">Invalid information.</string>
+    <string name="noResult">No result found</string>
+
+
+    <!-- php file location-->
+
+    <string name="authentication">http://192.168.56.1/smartOfficeManagement/api/authentication.php</string>
+    <string name="readInfo">http://192.168.56.1/smartOfficeManagement/api/readInfo.php</string>
+    <string name="attendance">http://192.168.56.1/smartOfficeManagement/api/attendance.php</string>
+    <string name="updateInfo">http://192.168.56.1/smartOfficeManagement/api/updateInfo.php</string>
+    <string name="insert">http://192.168.56.1/smartOfficeManagement/api/insertion.php</string>
+
+
+
+
+    <string name="title_activity_dashboard_demo">DashboardDemo</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+
+
+
+    <string-array name="comCategory">
+
+        <item>Information technology</item>
+        <item>Education</item>
+
+    </string-array>
+
+
 </resources>

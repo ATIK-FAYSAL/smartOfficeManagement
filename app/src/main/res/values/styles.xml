@@ -1,11 +1,44 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorA</item>
+        <item name="colorPrimaryDark">@color/colorA</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="ThemeA" parent="android:Theme.Holo.NoActionBar.Fullscreen">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorA</item>
+        <item name="colorPrimaryDark">@color/colorA</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="DrawerArrow" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/black</item>
+    </style>
+
+    <style name="NavigationView">
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="Theme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorC</item>
+        <item name="colorPrimaryDark">@color/colorC</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="drawerArrowStyle">@style/DrawerArrow</item>-->
+    </style>
+
+    <style name="ThemeB" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorC</item>
+        <item name="colorPrimaryDark">@color/colorC</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 
 </resources>

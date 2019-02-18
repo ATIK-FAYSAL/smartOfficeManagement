@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutA"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="@drawable/style_tab_bar"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:id="@+id/bRunningWork"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Running"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fifteen"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorA"/>
+
+            <Button
+                android:id="@+id/bPendingWork"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Pending"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fifteen"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorA"/>
+
+            <Button
+                android:id="@+id/bComplete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Complete"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fifteen"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/linearLayoutA">
+
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgAttendance"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_attendance"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
