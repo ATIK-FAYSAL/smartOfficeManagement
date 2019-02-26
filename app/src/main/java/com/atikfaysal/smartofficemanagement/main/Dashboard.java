@@ -67,8 +67,6 @@ import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-
-
 /*
         * display running,pending,complete work details
         * Give attendance
@@ -84,6 +82,8 @@ public class Dashboard extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         com.google.android.gms.location.LocationListener
 {
+
+
     private Button bRunning,bPending,bComplete;
 
     private String longitude,latitude;
@@ -97,6 +97,8 @@ public class Dashboard extends AppCompatActivity implements
     private ProgressDialog progressDialog;
     private AlertDialog alertDialog;
     private SignIn signIn;
+    private CircleImageView imgAttendance;
+    private Menu navMenu;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,15 +119,24 @@ public class Dashboard extends AppCompatActivity implements
     @Override
     protected void onStart() {
         super.onStart();
-
-        if (!isLocationEnabled())//check gps is disable
-            enableGpsLocation();//enable gps location
-
-
-        if (mGoogleApiClient != null) //if google api client not null
-            mGoogleApiClient.connect();//connect google api client
-
         gettingUserInformation();
+
+        if(storeDataInSharedPref.getUserType().equals("user"))
+        {
+            imgAttendance.setVisibility(View.GONE);//visibility off attendance button
+            hideNavOption(false);//hide drawer option
+            methods.warning("Warning","Your are not an admin or employee.Please become an admin or an employee");
+        }else
+        {
+            if (!isLocationEnabled())//check gps is disable
+                enableGpsLocation();//enable gps location
+
+            if (mGoogleApiClient != null) //if google api client not null
+                mGoogleApiClient.connect();//connect google api client
+
+            imgAttendance.setVisibility(View.VISIBLE);//show attendance button
+            hideNavOption(true);//display drawer option
+        }
     }
 
     /*
@@ -141,24 +152,31 @@ public class Dashboard extends AppCompatActivity implements
         drawerLayout.setDrawerListener(mToggle);
         mToggle.syncState();
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        CircleImageView imgAttendance = findViewById(R.id.imgAttendance);
+        imgAttendance = findViewById(R.id.imgAttendance);
         imgAttendance.setOnClickListener(this);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View view = navigationView.inflateHeaderView(R.layout.nav_header);
+        navMenu = navigationView.getMenu();
 
         TextView txtName = view.findViewById(R.id.txtName);
         TextView txtPhone = view.findViewById(R.id.txtPhone);
         CircleImageView userImage = view.findViewById(R.id.imgUserImage);
+
+
         bRunning = findViewById(R.id.bRunningWork);//for running work button
         bPending = findViewById(R.id.bPendingWork);//for pending work button
         bComplete = findViewById(R.id.bComplete);//for complete
+
         bRunning.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_left_button));//set selecting button background
+
 
         bRunning.setOnClickListener(this);//set listener for running work button
         bComplete.setOnClickListener(this);//set listener for complete work button
         bPending.setOnClickListener(this);//set listener for pending work button
+
+
 
         //making objects
         internetConnection = new CheckInternetConnection(this);
@@ -170,11 +188,26 @@ public class Dashboard extends AppCompatActivity implements
         signIn = new SignIn();
 
 
+        //if stored user information is not null
         if(!storeDataInSharedPref.getUserName().equals("none") && !storeDataInSharedPref.getPhoneNumber().equals("none"))
         {
             txtName.setText(storeDataInSharedPref.getUserName());//set user name
             txtPhone.setText(storeDataInSharedPref.getPhoneNumber());//set phone number
         }
+    }
+
+
+    //if current user is not an official person.then this menu item will not be shown
+    // when user become an official person,then this menu item will be shown
+    private void hideNavOption(boolean flag)
+    {
+        navMenu.findItem(R.id.itemMessage).setVisible(flag);
+        navMenu.findItem(R.id.itemNotice).setVisible(flag);
+        navMenu.findItem(R.id.itemCompany).setVisible(flag);
+        navMenu.findItem(R.id.itemDepartment).setVisible(flag);
+        navMenu.findItem(R.id.itemProject).setVisible(flag);
+        navMenu.findItem(R.id.itemWork).setVisible(flag);
+        navMenu.findItem(R.id.itemEmployee).setVisible(flag);
     }
 
     //if gps location is disable,then enable gps location
@@ -285,7 +318,6 @@ public class Dashboard extends AppCompatActivity implements
 
     }
 
-
     //make a request for getting user information
     private void gettingUserInformation()
     {
@@ -311,12 +343,6 @@ public class Dashboard extends AppCompatActivity implements
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] imageBytes = stream.toByteArray();
         return Base64.encodeToString(imageBytes, Base64.DEFAULT);
-    }
-
-    //exit from app
-    private void closeApp()
-    {
-        if(getIntent().getBooleanExtra("flag",false))finish();
     }
 
     @Override
@@ -391,9 +417,14 @@ public class Dashboard extends AppCompatActivity implements
                 locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 
+
     @Override
     public void setToolbar() {}
 
+    /*
+        * json parsing
+        * user information json array and convert to user model
+     */
     @Override
     public void processJsonData(String jsonData) {
 
@@ -405,6 +436,16 @@ public class Dashboard extends AppCompatActivity implements
         }
 
     }
+
+
+
+    /*
+        * button function
+        * terminate app
+        * attendance
+        * drawer menu option
+     */
+
 
     //when user click on back button,terminate app
     @Override
@@ -503,6 +544,10 @@ public class Dashboard extends AppCompatActivity implements
                 startActivity(new Intent(Dashboard.this,Employees.class));//display and publish new notice
                 break;
 
+            case R.id.itemProject:
+                startActivity(new Intent(Dashboard.this,Projects.class));//display and publish new notice
+                break;
+
             case R.id.itemSignOut://sign out
                 userSignOut();//sign out from this device
                 break;
@@ -535,6 +580,12 @@ public class Dashboard extends AppCompatActivity implements
                 methods.closeActivity(Dashboard.this,SignIn.class);
             }
         });
+    }
+
+    //exit from app
+    private void closeApp()
+    {
+        if(getIntent().getBooleanExtra("flag",false))finish();
     }
 
     private OnResponseTask responseTask = new OnResponseTask() {

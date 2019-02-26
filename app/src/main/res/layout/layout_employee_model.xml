@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView android:id="@+id/cardViewA"
+<android.support.v7.widget.CardView
+    android:id="@+id/cardViewA"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,35 +13,36 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgProPic"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_user"
             android:layout_centerVertical="true"/>
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imgProPic"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="3dp">
+            android:layout_toEndOf="@id/imgProPic"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:gravity="center_horizontal">
 
 
             <TextView
                 android:id="@+id/txtEmpName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorC"
+                android:layout_marginStart="5dp"
                 android:hint="Employee name"
-                android:textSize="@dimen/fifteen"
-                android:padding="5dp"
-                android:layout_marginStart="5dp"/>
+                android:padding="2dp"
+                android:gravity="start"
+                android:textColor="@color/colorC"
+                android:textSize="@dimen/fifteen" />
 
             <TextView
                 android:id="@+id/txtEmpId"
@@ -48,10 +50,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorB"
                 android:hint="Employee id"
+                android:gravity="start"
                 android:textSize="@dimen/thirteen"
-                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/txtEmpName"
                 android:layout_marginEnd="20dp"
-                android:padding="5dp"
+                android:padding="2dp"
                 android:layout_marginStart="5dp"/>
 
             <TextView
@@ -64,8 +67,9 @@
                 android:textSize="@dimen/fifteen"
                 tools:text="+8801835897172"
                 android:layout_marginStart="5dp"
+                android:gravity="start"
                 android:layout_below="@+id/txtEmpId"
-                android:padding="5dp"/>
+                android:padding="2dp"/>
 
             <TextView
                 android:id="@+id/txtEmail"
@@ -73,12 +77,13 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:hint="User email"
+                android:gravity="start"
                 android:textColor="@color/black"
                 android:textSize="@dimen/fifteen"
                 android:layout_marginStart="5dp"
                 android:layout_below="@+id/txtPhone"
                 tools:text="atikfaysal@gmail.com"
-                android:padding="5dp"/>
+                android:padding="2dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,6 +92,7 @@
                 android:layout_margin="5dp"
                 android:padding="3dp"
                 android:clipToPadding="true"
+                android:visibility="gone"
                 android:gravity="center">
 
                 <TextView

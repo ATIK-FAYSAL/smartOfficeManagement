@@ -16,6 +16,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.atikfaysal.smartofficemanagement.R;
+import com.atikfaysal.smartofficemanagement.background.StoreDataInSharedPref;
+import com.atikfaysal.smartofficemanagement.main.CompanyRegistration;
+import com.atikfaysal.smartofficemanagement.main.Dashboard;
+import com.atikfaysal.smartofficemanagement.main.Profile;
 import com.atikfaysal.smartofficemanagement.main.SignIn;
 import com.gdacciaro.iOSDialog.iOSDialog;
 import com.gdacciaro.iOSDialog.iOSDialogBuilder;
@@ -27,12 +31,11 @@ import java.util.Objects;
 
 public class RequiredMethods extends AlertDialog
 {
-
     private Context context;
     private Activity activity;
     private AlertDialog.Builder builder;
     private AlertDialog alertDialog;
-
+    private StoreDataInSharedPref sharedPref;
 
     //constructor
     public RequiredMethods(Context context)
@@ -40,8 +43,8 @@ public class RequiredMethods extends AlertDialog
         super(context);
         this.context = context;
         activity = (Activity) context;
+        sharedPref = new StoreDataInSharedPref(context);
     }
-
 
     //get current time and date
     @SuppressLint("SimpleDateFormat")
@@ -52,6 +55,44 @@ public class RequiredMethods extends AlertDialog
         return dateFormat.format(calendar.getTime());
     }
 
+    public void warning(String title,String message)
+    {
+        @SuppressLint("InflateParams")
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_warning,null);
+        Button bNeg = view.findViewById(R.id.bCancel);
+        Button bPos = view.findViewById(R.id.bDone);
+        TextView txtTitle = view.findViewById(R.id.txtTitle);
+        TextView txtMessage = view.findViewById(R.id.txtMessage);
+
+        txtTitle.setText(title);
+        txtMessage.setText(message);
+
+        builder = new AlertDialog.Builder(context);
+        builder.setView(view);
+        builder.setCancelable(true);
+        alertDialog = builder.create();
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
+
+        bPos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, Profile.class);
+                intent.putExtra("userId",sharedPref.getUserId());//passing user id
+                context.startActivity(intent);//start new activity
+            }
+        });
+
+        bNeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CompanyRegistration.class);
+                context.startActivity(intent);//start new activity
+            }
+        });
+
+    }
+
     //close top all activity and go to specific activity
     public void closeActivity(Activity context, Class<?> clazz) {
         Intent intent = new Intent(context, clazz);
@@ -60,6 +101,7 @@ public class RequiredMethods extends AlertDialog
         context.finish();
     }
 
+    //when execution is successful ,show this message
     public void congratulationDialog()
     {
         @SuppressLint("InflateParams")
@@ -81,13 +123,12 @@ public class RequiredMethods extends AlertDialog
         });
     }
 
-
+    //getting device unique id
     @SuppressLint("HardwareIds")
     public String gettingDeviceId()
     {
         return Secure.getString(context.getContentResolver(),Secure.ANDROID_ID);//getting device id
     }
-
 
     //execution failed
     public void errorMessage(String message)

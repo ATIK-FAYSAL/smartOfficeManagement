@@ -29,12 +29,12 @@
     <item
         android:id="@+id/itemDepartment"
         android:title="Department"
-        android:icon="@drawable/icon_phone"/>
+        android:icon="@drawable/icon_department"/>
 
     <item
         android:id="@+id/itemProject"
         android:title="Project"
-        android:icon="@drawable/icon_phone"/>
+        android:icon="@drawable/icon_project"/>
 
     <item
         android:id="@+id/itemWork"

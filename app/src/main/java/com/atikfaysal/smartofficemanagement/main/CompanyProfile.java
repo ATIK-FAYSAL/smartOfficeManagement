@@ -50,10 +50,6 @@ public class CompanyProfile extends AppCompatActivity implements
     private ImageView imgQrCode;
     private RelativeLayout relativeLayout;
 
-
-
-    private Button bCreateCompany;
-
     private StoreDataInSharedPref sharedPref;
     private CheckInternetConnection internetConnection;
     private RequiredMethods requiredMethods;
@@ -73,16 +69,11 @@ public class CompanyProfile extends AppCompatActivity implements
     @Override
     protected void onStart() {
         super.onStart();
-
-        if(sharedPref.getUserType().equals("admin") || sharedPref.getUserType().equals("employee"))
-            bCreateCompany.setVisibility(View.GONE);//if  company available then create button disable,invisible create new company button
-        else relativeLayout.setVisibility(View.GONE);//if no company available then create button enable
     }
 
     @Override
     public void initComponent() {
 
-        bCreateCompany = findViewById(R.id.bCreateCompany);
         bSave = findViewById(R.id.bSave);
         inputName = findViewById(R.id.inputName);
         inputEmail = findViewById(R.id.inputEmail);
@@ -100,7 +91,6 @@ public class CompanyProfile extends AppCompatActivity implements
         bSave.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_disable_button));//button disable for the first time
 
         //set click listener
-        bCreateCompany.setOnClickListener(this);
         txtEdit.setOnClickListener(this);
         txtChoose.setOnClickListener(this);
         bSave.setOnClickListener(this);
@@ -120,10 +110,6 @@ public class CompanyProfile extends AppCompatActivity implements
 
         switch (view.getId())
         {
-            case R.id.bCreateCompany://create new company
-                startActivity(new Intent(CompanyProfile.this,CompanyRegistration.class));//create new company
-                break;
-
             case R.id.txtEdit:
                 enableDisableComponent(true);//enable all component
                 bSave.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_button));//button disable for the first time

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutA"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="@drawable/style_tab_bar"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/toolbar">
+
+            <Button
+                android:id="@+id/bProject"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Project"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fifteen"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorA"/>
+
+            <Button
+                android:id="@+id/bCreateProject"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Create Project"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fifteen"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/linearLayoutA">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorD"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <include
+                    android:id="@+id/emptyView"
+                    layout="@layout/empty"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/ten">
+                </android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="@dimen/ten"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/inputProName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:background="@drawable/style_tab_bar"
+                        android:hint="Project name"
+                        android:inputType="text"
+                        android:padding="@dimen/ten"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sixteen" />
+
+                    <EditText
+                        android:id="@+id/inputProGoal"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/inputProName"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:background="@drawable/style_tab_bar"
+                        android:gravity="start"
+                        android:hint="Project goal"
+                        android:inputType="textMultiLine"
+                        android:lines="15"
+                        android:padding="@dimen/ten"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sixteen" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/inputProGoal"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtStartDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_tab_bar"
+                            android:hint="Start date"
+                            android:padding="@dimen/ten"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sixteen" />
+
+
+                        <TextView
+                            android:id="@+id/txtEndDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_tab_bar"
+                            android:hint="End date"
+                            android:padding="@dimen/ten"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sixteen" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/inputProDes"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/linearLayoutB"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:background="@drawable/style_tab_bar"
+                        android:gravity="start"
+                        android:hint="Project Description"
+                        android:inputType="textMultiLine"
+                        android:lines="15"
+                        android:padding="@dimen/ten"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sixteen" />
+
+                    <TextView
+                        android:id="@+id/txtTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/inputProDes"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:text="Project type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/eighteen"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtTitle"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/ten"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <RadioButton
+                            android:id="@+id/radioPublic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/ten"
+                            android:text="Public"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sixteen" />
+
+                        <RadioButton
+                            android:id="@+id/radioPrivate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/fifteen"
+                            android:gravity="center"
+                            android:padding="@dimen/ten"
+                            android:text="Private"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sixteen" />
+
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/txtTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/radioGroupA"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:text="Project Priority"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/eighteen"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtTitle1"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginTop="@dimen/ten"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioHigh"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="High"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sixteen" />
+
+                        <RadioButton
+                            android:id="@+id/radioMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sixteen" />
+
+                        <RadioButton
+                            android:id="@+id/radioLow"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Low"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sixteen" />
+
+
+                    </RadioGroup>
+
+                    <Button
+                        android:id="@+id/bCreate"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/radioGroupB"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="60dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/style_button"
+                        android:clipToPadding="true"
+                        android:elevation="5dp"
+                        android:text="Create Project"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

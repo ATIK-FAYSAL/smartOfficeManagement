@@ -55,6 +55,15 @@ public class StoreDataInSharedPref
         editor.apply();//store user info
     }
 
+    //change user type
+    public void setUserType(String type)
+    {
+        sharedPreferences = context.getSharedPreferences(UserInfo,Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putString("userType",type);//store user type
+        editor.apply();
+
+    }
 
     //store user log in status
     public void isUserLogin(boolean flag)

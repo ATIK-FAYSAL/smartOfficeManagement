@@ -196,6 +196,7 @@ public class CompanyRegistration extends AppCompatActivity implements Implemente
                     if(value.equals("success"))
                     {
                         Toast.makeText(CompanyRegistration.this,"Company created successfully",Toast.LENGTH_LONG).show();
+                        storeDataInSharedPref.setUserType("admin");//change user type as admin
                         methods.closeActivity(CompanyRegistration.this,Dashboard.class);//go to dashboard
                     }
                     else methods.errorMessage("");//if company creation failed

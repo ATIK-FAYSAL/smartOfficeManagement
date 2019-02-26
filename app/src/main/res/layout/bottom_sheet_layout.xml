@@ -47,7 +47,6 @@
                 android:layout_centerInParent="true"
                 android:textStyle="bold"
                 android:hint="Some text"
-                tools:text="Budget"
                 android:gravity="center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"

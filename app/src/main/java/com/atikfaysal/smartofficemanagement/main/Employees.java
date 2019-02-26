@@ -65,26 +65,26 @@ public class Employees extends AppCompatActivity implements ImplementedMethods, 
     @Override
     public void onClick(View view) {
 
-       switch (view.getId())
-       {
-           case R.id.bAllEmployee:
-               bAll.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_left_button));//set selecting button background
-               bHR.setBackgroundResource(0);//set default background
-               bDeptHead.setBackgroundResource(0);//set default background
-               break;
+        switch (view.getId())
+        {
+            case R.id.bAllEmployee:
+                bAll.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_left_button));//set selecting button background
+                bHR.setBackgroundResource(0);//set default background
+                bDeptHead.setBackgroundResource(0);//set default background
+                break;
 
-           case R.id.bHrAdmin:
-               bHR.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_middle_button));//set selecting button background
-               bAll.setBackgroundResource(0);//set default background
-               bDeptHead.setBackgroundResource(0);//set default background
-               break;
+            case R.id.bHrAdmin:
+                bHR.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_middle_button));//set selecting button background
+                bAll.setBackgroundResource(0);//set default background
+                bDeptHead.setBackgroundResource(0);//set default background
+                break;
 
-           case R.id.bDptHead:
-               bDeptHead.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_right_button));//set selecting button background
-               bHR.setBackgroundResource(0);//set default background
-               bAll.setBackgroundResource(0);//set default background
-               break;
-       }
+            case R.id.bDptHead:
+                bDeptHead.setBackgroundDrawable(getResources().getDrawable(R.drawable.style_right_button));//set selecting button background
+                bHR.setBackgroundResource(0);//set default background
+                bAll.setBackgroundResource(0);//set default background
+                break;
+        }
 
     }
 
